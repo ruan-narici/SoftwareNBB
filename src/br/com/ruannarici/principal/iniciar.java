@@ -1,6 +1,8 @@
 package br.com.ruannarici.principal;
 
 import java.io.IOException;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -72,13 +74,15 @@ public class iniciar {
 				Time[] arrayTimeUm = listaDeTimes.get(0);
 				Time[] arrayTimeDois = listaDeTimes.get(1);
 				
-				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
+				Map<String, Time> rankList = (LinkedHashMap<String, Time>) arquivo.toRankList(arrayTimeUm, arrayTimeDois);
 				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
-				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
-						.reversed()) 
-		        .forEach(System.out::println); 
+				.sorted(Map.Entry.comparingByValue(
+						Comparator.comparing(Time::getPontos)
+						.thenComparing(Time::getPlacar)
+						.reversed()))
+				.forEach(System.out::println);;
 				System.out.println();
 				break;
 			}

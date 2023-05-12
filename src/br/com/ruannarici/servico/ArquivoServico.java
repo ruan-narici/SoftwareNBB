@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -92,7 +93,7 @@ public class ArquivoServico {
 	}
 	
 	public Map<String, Time> toRankList(Time[] listaTimeUm, Time[] listaTimeDois) {
-		Map<String, Time> rankList = new HashMap<>();
+		Map<String, Time> rankList = new LinkedHashMap<>();
 		
 		for (int i = 0; i < listaTimeUm.length - 1; i++) {
 			
