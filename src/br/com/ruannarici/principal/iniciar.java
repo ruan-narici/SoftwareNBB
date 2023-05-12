@@ -44,30 +44,38 @@ public class iniciar {
 			
 			switch (opcao) {
 			case 1: {
+				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
 				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
 						.reversed()) 
 		        .limit(1) 
 		        .forEach(System.out::println); 
+				System.out.println();
 				break;
 			}
 			case 2: {
+				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
 				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
 						.reversed()) 
 		        .limit(2) 
 		        .forEach(System.out::println); 
+				System.out.println();
 				break;
 			}
 			case 3: {
+				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
 				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
 						.reversed()) 
 		        .forEach(System.out::println); 
+				System.out.println();
 				break;
 			}
 			case 4: {
+				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				listaDePartidas.forEach(System.out::println);
+				System.out.println();
 				break;
 			}
 			default: {
