@@ -74,7 +74,7 @@ public class iniciar {
 				Time[] arrayTimeUm = listaDeTimes.get(0);
 				Time[] arrayTimeDois = listaDeTimes.get(1);
 				
-				Map<String, Time> rankList = (LinkedHashMap<String, Time>) arquivo.toRankList(arrayTimeUm, arrayTimeDois);
+				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
 				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
