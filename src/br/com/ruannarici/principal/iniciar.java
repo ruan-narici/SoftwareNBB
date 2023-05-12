@@ -23,14 +23,6 @@ public class iniciar {
 		
 		String texto = arquivo.ler(nomeArquivo);
 		
-		List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
-		Time[] arrayTimeUm = listaDeTimes.get(0);
-		Time[] arrayTimeDois = listaDeTimes.get(1);
-		
-		List<Partida> listaDePartidas = arquivo.toListPartida(texto, arrayTimeUm, arrayTimeDois);
-		
-		Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
-		
 		System.out.println("## Digite uma opcao valida ##");
 		
 		while (continuar) {
@@ -44,6 +36,12 @@ public class iniciar {
 			
 			switch (opcao) {
 			case 1: {
+				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
+				Time[] arrayTimeUm = listaDeTimes.get(0);
+				Time[] arrayTimeDois = listaDeTimes.get(1);
+				
+				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
+				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
 				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
@@ -54,6 +52,12 @@ public class iniciar {
 				break;
 			}
 			case 2: {
+				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
+				Time[] arrayTimeUm = listaDeTimes.get(0);
+				Time[] arrayTimeDois = listaDeTimes.get(1);
+				
+				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
+				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
 				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
@@ -64,6 +68,12 @@ public class iniciar {
 				break;
 			}
 			case 3: {
+				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
+				Time[] arrayTimeUm = listaDeTimes.get(0);
+				Time[] arrayTimeDois = listaDeTimes.get(1);
+				
+				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
+				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				rankList.entrySet().stream()
 				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
@@ -73,6 +83,12 @@ public class iniciar {
 				break;
 			}
 			case 4: {
+				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
+				Time[] arrayTimeUm = listaDeTimes.get(0);
+				Time[] arrayTimeDois = listaDeTimes.get(1);
+				
+				List<Partida> listaDePartidas = arquivo.toListPartida(texto, arrayTimeUm, arrayTimeDois);
+				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
 				listaDePartidas.forEach(System.out::println);
 				System.out.println();
