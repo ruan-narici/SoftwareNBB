@@ -77,12 +77,19 @@ public class iniciar {
 				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
 				
 				System.out.println(System.lineSeparator() + "#-> RESULTADO");
+				//Fazendo a ordenacao com base em pontos e placar total
 				rankList.entrySet().stream()
+				//Aqui ele ordena com base no 
 				.sorted(Map.Entry.comparingByValue(
+						//Primeiro parametro (principal)
 						Comparator.comparing(Time::getPontos)
+						//Secundo parametro (secundario)
 						.thenComparing(Time::getPlacar)
+						//Descendente
 						.reversed()))
-				.forEach(System.out::println);;
+				//Imprimindo cada um dos itens dentro do LinkedHashMap
+				//Será impresso uma lista ordenada pelo maior ponto e maior placar
+				.forEach(System.out::println);
 				System.out.println();
 				break;
 			}
