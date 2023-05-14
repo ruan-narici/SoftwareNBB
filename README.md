@@ -1,5 +1,5 @@
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![Ruan Narici](./assets/img/preview.gif#vitrinedev)
+![Ruan Narici](./assets/img/prev.gif#vitrinedev)
 
 ``` 
 > Status 
