@@ -2,7 +2,6 @@ package br.com.ruannarici.principal;
 
 import java.io.IOException;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -38,71 +37,19 @@ public class iniciar {
 			
 			switch (opcao) {
 			case 1: {
-				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
-				Time[] arrayTimeUm = listaDeTimes.get(0);
-				Time[] arrayTimeDois = listaDeTimes.get(1);
-				
-				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
-				
-				System.out.println(System.lineSeparator() + "#-> RESULTADO");
-				rankList.entrySet().stream()
-				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
-						.reversed()) 
-		        .limit(1) 
-		        .forEach(System.out::println); 
-				System.out.println();
+				exibirRank(texto, 1);
 				break;
 			}
 			case 2: {
-				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
-				Time[] arrayTimeUm = listaDeTimes.get(0);
-				Time[] arrayTimeDois = listaDeTimes.get(1);
-				
-				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
-				
-				System.out.println(System.lineSeparator() + "#-> RESULTADO");
-				rankList.entrySet().stream()
-				.sorted(Map.Entry.<String, Time>comparingByValue((o1, o2) -> o1.getPontos().compareTo(o2.getPontos()))
-						.reversed()) 
-		        .limit(2) 
-		        .forEach(System.out::println); 
-				System.out.println();
+				exibirRank(texto, 2);
 				break;
 			}
 			case 3: {
-				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
-				Time[] arrayTimeUm = listaDeTimes.get(0);
-				Time[] arrayTimeDois = listaDeTimes.get(1);
-				
-				Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
-				
-				System.out.println(System.lineSeparator() + "#-> RESULTADO");
-				//Fazendo a ordenacao com base em pontos e placar total
-				rankList.entrySet().stream()
-				//Aqui ele ordena com base no 
-				.sorted(Map.Entry.comparingByValue(
-						//Primeiro parametro (principal)
-						Comparator.comparing(Time::getPontos)
-						//Secundo parametro (secundario)
-						.thenComparing(Time::getPlacar)
-						//Descendente
-						.reversed()))
-				//Imprimindo cada um dos itens dentro do LinkedHashMap
-				//Será impresso uma lista ordenada pelo maior ponto e maior placar
-				.forEach(System.out::println);
-				System.out.println();
+				exibirRank(texto, 999);
 				break;
 			}
 			case 4: {
-				List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
-				Time[] arrayTimeUm = listaDeTimes.get(0);
-				Time[] arrayTimeDois = listaDeTimes.get(1);
-				
-				List<Partida> listaDePartidas = arquivo.toListPartida(texto, arrayTimeUm, arrayTimeDois);
-				
-				System.out.println(System.lineSeparator() + "#-> RESULTADO");
-				listaDePartidas.forEach(System.out::println);
-				System.out.println();
+				exibirPartidas(texto);
 				break;
 			}
 			default: {
@@ -113,6 +60,44 @@ public class iniciar {
 			}
 		}
 		
+		scan.close();
+		
+	}
+	
+	public static void exibirRank(String texto, Integer topTimes) {
+		List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
+		Time[] arrayTimeUm = listaDeTimes.get(0);
+		Time[] arrayTimeDois = listaDeTimes.get(1);
+		
+		Map<String, Time> rankList = arquivo.toRankList(arrayTimeUm, arrayTimeDois);
+		
+		System.out.println(System.lineSeparator() + "#-> RESULTADO");
+		rankList.entrySet().stream()
+		//Aqui ele ordena com base no 
+		.sorted(Map.Entry.comparingByValue(
+				//Primeiro parametro (principal)
+				Comparator.comparing(Time::getPontos)
+				//Secundo parametro (secundario)
+				.thenComparing(Time::getPlacar)
+				//Descendente
+				.reversed()))
+		.limit(topTimes)
+		//Imprimindo cada um dos itens dentro do LinkedHashMap
+		//Será impresso uma lista ordenada pelo maior ponto e maior placar
+		.forEach(System.out::println);
+		System.out.println();
+	}
+	
+	public static void exibirPartidas(String texto) {
+		List<Time[]> listaDeTimes = arquivo.toArrayTimes(texto);
+		Time[] arrayTimeUm = listaDeTimes.get(0);
+		Time[] arrayTimeDois = listaDeTimes.get(1);
+		
+		List<Partida> listaDePartidas = arquivo.toListPartida(texto, arrayTimeUm, arrayTimeDois);
+		
+		System.out.println(System.lineSeparator() + "#-> RESULTADO");
+		listaDePartidas.forEach(System.out::println);
+		System.out.println();
 	}
 
 }

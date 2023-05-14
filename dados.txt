@@ -47,3 +47,17 @@
 13.03. 19:30/União Corinthians/Rio Claro/95/83
 13.03. 19:00/Paulistano/Cerrado/91/77
 11.03. 18:00/Bauru/Pato/74/55
+11.03. 18:00/Pinheiros/Corinthians Paulista/78/69
+11.03. 17:00/Caxias do Sul/Rio Claro/76/53
+10.03. 19:30/Unifacisa/Fortaleza B.C./80/69
+10.03. 19:00/São Paulo/Brasília/88/72
+09.03. 19:15/Bauru/Corinthians Paulista/75/63
+09.03. 19:00/Paulistano/União Corinthians/82/80
+09.03. 19:00/Pinheiros/Pato/76/69
+07.03. 20:00/São Paulo/União Corinthians/99/76
+06.03. 20:00/Cerrado/São José/64/96
+06.03. 20:00/Rio Claro/Bauru/84/69
+06.03. 19:00/Paulistano/Caxias do Sul/83/58
+04.03. 18:00/Pato/Unifacisa/82/71
+04.03. 17:10/Brasília/São José/94/100
+04.03. 16:00/São Paulo/Caxias do Sul/70/64

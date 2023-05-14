@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +27,7 @@ public class ArquivoServico {
 			texto += br.readLine() + "/" + System.lineSeparator();
 		}
 		
+		br.close();
 		return texto;
 	}
 	
