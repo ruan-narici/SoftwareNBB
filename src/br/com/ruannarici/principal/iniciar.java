@@ -96,7 +96,7 @@ public class iniciar {
 		List<Partida> listaDePartidas = arquivo.toListPartida(texto, arrayTimeUm, arrayTimeDois);
 		
 		System.out.println(System.lineSeparator() + "#-> RESULTADO");
-		listaDePartidas.forEach(System.out::println);
+		listaDePartidas.forEach(System.out::print);
 		System.out.println();
 	}
 

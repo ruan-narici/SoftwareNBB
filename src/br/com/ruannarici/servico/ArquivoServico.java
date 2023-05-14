@@ -80,7 +80,7 @@ public class ArquivoServico {
 			Time timeDois = listaTimeDois[contador];
 			contador++;
 			
-			partida.setDataHora(timeSeparado[0]);
+			partida.setDataHora(timeSeparado[i]);
 			partida.setTimeUm(timeUm);
 			partida.setPlacarTimeUm(timeUm.getPlacar());
 			partida.setTimeDois(timeDois);
